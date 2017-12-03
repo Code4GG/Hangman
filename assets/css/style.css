@@ -1,0 +1,73 @@
+body{
+	background-image: url(../images/wallpaper.jpg);
+	height: 100%;
+	background-position: center;
+	background-size: cover;
+}
+.header{
+	width: 100%;
+	height: 200px;
+	text-align: center;
+}
+.man{
+	width: 100%;
+	font-size: 200px;
+	font-family: 'Londrina Outline', cursive;
+	-webkit-text-stroke: antiquewhite 8px;
+}
+.container{
+	
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+}
+.leftside{
+	border: 3px solid black;
+	height: 500px;
+	width: 50%;
+	margin: auto;
+}
+.leftside > p{
+	text-align: center;
+	font-size: 68px;
+	color: yellow;
+	-webkit-text-stroke: red 2px;
+	padding-top: 50px;
+}
+.rightside{
+	border: 3px solid black;
+	height: 500px;
+	margin: auto;
+	width: 50%;
+	text-align: center;
+	color: yellow;
+	-webkit-text-stroke:red 1px;
+	font-size: 32px;
+}
+.rightside > p{
+	padding-top: 40px;
+}
+#press{
+	padding-top: 50px;
+}
+.textImg{
+	background-image: url("../images/rope.jpg");
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.logo{
+	position: absolute;
+	right: 5px;
+	top: 135px;
+	transform: rotate(14deg);
+	width: 200px;
+}
+.startImg{
+	width: 95%;
+	padding: 10px;
+	padding-top: 50px;
+}
