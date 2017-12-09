@@ -6,12 +6,12 @@ body{
 }
 .header{
 	width: 100%;
-	height: 200px;
+	height: 170px;
 	text-align: center;
 }
 .man{
 	width: 100%;
-	font-size: 200px;
+	font-size: 185px;
 	font-family: 'Londrina Outline', cursive;
 	-webkit-text-stroke: antiquewhite 8px;
 }
@@ -24,8 +24,8 @@ body{
 	flex-direction: row;
 }
 .leftside{
-	border: 3px solid black;
-	height: 500px;
+	border: 3px solid lightyellow;
+	height: 620px;
 	width: 50%;
 	margin: auto;
 }
@@ -34,11 +34,11 @@ body{
 	font-size: 68px;
 	color: yellow;
 	-webkit-text-stroke: red 2px;
-	padding-top: 50px;
+	padding-top: 25px;
 }
 .rightside{
-	border: 3px solid black;
-	height: 500px;
+	border: 3px solid lightyellow;
+	height: 620px;
 	margin: auto;
 	width: 50%;
 	text-align: center;
@@ -62,12 +62,26 @@ body{
 .logo{
 	position: absolute;
 	right: 5px;
-	top: 135px;
+	top: 100px;
 	transform: rotate(14deg);
 	width: 200px;
 }
 .startImg{
 	width: 95%;
+	height: 60%;
 	padding: 10px;
 	padding-top: 50px;
+}
+.start{
+	margin-top: 15px;
+	width: 150px;
+	height: 50px;
+	border: 2px solid white;
+	font-size: 14px;
+	color: white;
+	background-color: cornflowerblue;
+}
+.startBtn{
+	display: flex;
+	justify-content: center;
 }
