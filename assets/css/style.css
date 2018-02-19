@@ -1,87 +1,40 @@
 body{
-	background-image: url(../images/wallpaper.jpg);
-	height: 100%;
-	background-position: center;
-	background-size: cover;
-}
-.header{
-	width: 100%;
-	height: 170px;
-	text-align: center;
-}
-.man{
-	width: 100%;
-	font-size: 185px;
-	font-family: 'Londrina Outline', cursive;
-	-webkit-text-stroke: antiquewhite 8px;
-}
-.container{
-	
-	width: 100%;
-	height: 100%;
-	margin: 0 auto;
-	display: flex;
-	flex-direction: row;
-}
-.leftside{
-	border: 3px solid lightyellow;
-	height: 620px;
-	width: 50%;
-	margin: auto;
-}
-.leftside > p{
-	text-align: center;
-	font-size: 68px;
-	color: yellow;
-	-webkit-text-stroke: red 2px;
-	padding-top: 25px;
-}
-.rightside{
-	border: 3px solid lightyellow;
-	height: 620px;
-	margin: auto;
-	width: 50%;
-	text-align: center;
-	color: yellow;
-	-webkit-text-stroke:red 1px;
-	font-size: 32px;
-}
-.rightside > p{
-	padding-top: 40px;
-}
-#press{
-	padding-top: 50px;
-}
-.textImg{
-	background-image: url("../images/rope.jpg");
-	height: 100%;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-.logo{
-	position: absolute;
-	right: 5px;
-	top: 100px;
-	transform: rotate(14deg);
-	width: 200px;
-}
-.startImg{
-	width: 95%;
-	height: 60%;
-	padding: 10px;
-	padding-top: 50px;
-}
-.start{
-	margin-top: 15px;
-	width: 150px;
-	height: 50px;
-	border: 2px solid white;
-	font-size: 14px;
-	color: white;
-	background-color: cornflowerblue;
-}
-.startBtn{
 	display: flex;
 	justify-content: center;
+	align-items: center;
+	background-image: url(../images/background.jpg);
+}
+.container{
+	margin: 25px;
+	border-top: 3px solid blue;
+	border-left: 3px solid red;
+	border-right: 3px solid green;
+	border-bottom: 3px solid yellow;
+	background-color: ghostwhite;
+	width: 100%;
+	height: 650px;
+	text-align: center;
+}
+.title{
+	padding: 35px;
+	font-size: 45px;
+	font-family: 'Anton', sans-serif;
+}
+.dev{
+	display: flex;
+	justify-content: center;
+}
+.hang{
+	display: flex;
+	justify-content: center;
+}
+.outline{
+	color: white;
+   -webkit-text-fill-color: ghostwhite; /* Will override color (regardless of order) */
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: black;
+}
+.display > p{
+	margin: 15px;
+	font-size: 22px;
 }

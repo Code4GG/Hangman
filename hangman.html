@@ -4,226 +4,55 @@
 	<title>Welcome</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Londrina+Outline" rel="stylesheet">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
 </head>
 <body>
 
-	<div class="header">
-		<h1 class="man textImg">HANGMAN</h1>
-	</div>
-
-
 	<div class="container">
-		<div class="leftside">
-			<div class="startBtn">
-			<button type="reset" class="start" id="button">Start New Game</button>
+
+		<div class="title">
+			
+			<div class="dev">
+				<h1>D</h1>
+				<h1 class="outline">E</h1>
+				<h1>V</h1>
+				<h1 class="outline">E</h1>
+				<h1>LOP</h1>
+				<h1 class="outline">E</h1>
+				<h1>R-</h1>
 			</div>
-			<p id="wins">Wins: </p>
-			<img class="startImg" src="https://pmcvariety.files.wordpress.com/2016/06/ts3.jpg?w=700&h=393&crop=1">
+			
+			<div class="hang">
+				<h1>--</h1>
+				<h1>H</h1>
+				<h1 class="outline">A</h1>
+				<h1>NGM</h1>
+				<h1 class="outline">A</h1>
+				<h1>N</h1>
+			</div>
+
 		</div>
 
-		<div class="rightside">
-			<p id="press">Press Any Key To Get Started</p>
+		<div class="display">
+			
+			<p id="keystart">Press Any Key to Start!</p>
+
+			<p id="wins">Wins:</p>
+
 			<p>Current Word</p>
-			<p id="word"></p>
-			<div id="newGuess"></div>
-			<p>Number of Guesses Remaining : <span id = "guessesRemain"></span></p>
-			<!--(number)-->
-			<p>Letters already guessed</p>
-			<p id="lettersGuessed">{}</p>
+
+			<p id="blanks"></p>
+
+			<p id="remaining"></p>
+
+			<p id="lettersGuessed"></p>
+
 		</div>
+
 	</div>
 
-	<script type="text/javascript">
-		//Declare Variables
-
-		//functions for when user clicks
-
-		//Set an array of every word then possibly use charAt 
-		//or make an array of of one word with every letter a seperate value
-
-		//Set up a for loop that displays _ for the amount of letters in the word
-		//for each different word
-
-		//when user guesses right display the correct letter in the array in the 
-		//correct posistion replacing the coreasponding underscore
-
-		//make it so the user has 10 guesses per round
-
-		//if the user guesses wrong display wrong letter guessed inside {}
-		//along with making the guessesLeft--
-
-		//when user wins wins ++
-
-		//after word is guessed correct display a cool gif
-
-		//if word is guessed incorrectly display shark and woody
-
-		//after user guesses correctly or runs out of trys display
-		//the above either or gifs and then pop up box displaying next round
-
-		//user is allowed to lose three times then game over and theyre will be a total
-		//of 14 words after game is lost or won refresh to go again
-
-		let wins = 0;
-		let correct = 0;
-		let letterBlanks =[];
-		let wordGuesses = ["woody", "buzz", "sid", "bopee", "yog"];
-		let lettersGuessed = [];
-		let alphabetArr = ["a", "b", "c", "d", "e", "f", 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-		// let alphabet = getAlphabetArr();
-		let guessesRemain = 10;
-		let randomWord = wordGuesses[Math.floor(Math.random()*wordGuesses.length)];
-		let word = "timeup";
-		let underscoreWordArr = [];
-		let randomWordArray = randomWord.split("");
-
-		
-
-		console.log(randomWordArray);
-		console.log(underscoreWordArr);
-
-
-
-		const underScore = function(){
-
-		 	// 1. Look at each letter of the word and replace it with _
-			for (let i = 0; i < randomWord.length; i++){
-				underscoreWordArr[i] = " _ "; 
-			}
-			
-
-			// 2. Convert the list of underscores into a single string
-			let wordU = underscoreWordArr.join("");
-
-			console.log(underscoreWordArr, wordU)
-			console.log("wordu " + wordU);
-
-			// 3. Return wordU to pass back to caller
-			return wordU;
-
-		}
-		underScore();
-
-		//Adds Wins if puzzle complete
-		function win(){
-			if (                                                                                                                                                                                                                                            ){
-				wins++
-			}
-			document.getElementById('wins').innerHTML = "Wins: " + wins;
-		}
-
-		// On every key press, update the underscore array by checking to see if the key that was pressed in part of the woody array. If the underscore array and woody array match, alert that the user won. Do this check on ever key press after updating the underscore array. 
-
-		// if (underscoreArray === woodyArray){
-		// 	console.log("you won")
-		// }
-
-
-
-		window.addEventListener('keyup', function(event){
-			// underScore();
-			let userGuess = event.key;
-			console.log(userGuess);
-			lettersGuessed.push(userGuess);
-			console.log(lettersGuessed);
-			// document.getElementById('word').innerHTML = underScore();
-
-			for (let i = 0; i < randomWordArray.length; i++){
-				if (userGuess === randomWordArray[i]){
-					console.log('ding')
-					underscoreWordArr[i] = randomWordArray[i];
-				}
-			}
-
-			console.log("underscorearray: " + underscoreWordArr);
-
-			
-			document.getElementById('lettersGuessed').innerHTML = "{"+ lettersGuessed + "}";
-			 document.getElementById('wins').innerHTML = "Wins: " + wins;
-			document.getElementById('guessesRemain').innerHTML = guessesRemain;
-			document.getElementById('word').innerHTML = underscoreWordArr;
-
-			if (word.indexOf(userGuess) > -1){
-				document.getElementById('word').innerHTML += userGuess;
-				document.getElementById('lettersGuessed').innerHTML += userGuess;
-				correct = correct + 1;
-			} else {
-				guessesRemain = guessesRemain - 1;
-			}
-			//use a for loop to check for randomwordArray to match event.key (place your for loop in your event listener so that it runs every time a user presses a key) if so then use the .replace method to place to correct letter in the correct spot
-
-
-
-		})
-		
-		//Clears game by refreshing page
-		 document.getElementById('button').addEventListener('click', function(){
-	    	window.location.reload();
-	    })
-
-		 //checking to see if the letter matches correctly somehow?
-		 function isCorrectLetter(userKey){
-		 	  return alphabet.indexOf(userKey) > -1;
-		 }
-		 	
-
-		 //everytime the guess is incorrect the guessesRemain number is lowered
-		 function incorrectGuess(){
-		 	guessesRemain--;
-		 	 document.getElementById("lettersGuessed").innerHTML = lettersGuessed;
-		 	document.getElementById('guessesRemain').innerHTML = guessesRemain;
-		 }
-
-		 //running through the letters so then this can be added to another function through
-		 //a variable and that function checks if letters match correctly
-		 // function getAlphabetArr(){
-		 // 	let alphabetArr = []
-
-		 // 	for (let i = 'a'.charAt(0); i <= 'z'.charAt(0); i++)
-	
-	 	// 	alphabetArr.replace(alphabet[0], alphabet2[1]);
-		 // }
-	 //    return alphabetArr;
-	 // }
-
-	 
-
-
-	 
-		
-
-	    
-		// function imgChange(){
-		// 	let images = document.querySelectorAll("img")[0];
-		// 	let source = image.src = image.src.replace()
-		// }
-
-		// //three functions made into a if statementd
-		// //to clear use the .empty method
-		// //when game starts
-		// //when user wins
-		// if (true) {
-		// 	wins++
-		// 	document.getElementById('win').innerHTML ="<p> Wins:" + wins + "</p>";
-		// }
-		
-		// //when user loses
-		// else if (false){
-		// 	guessesRemain--
-		// 	document.getElementById('guessesRemain').innerHTML ="<p> Number of Guesses Remaining:" + guessesRemain + "</p>";
-		// }
-
-
-
-		
-		
-
-		//Place values in an a array for compatable answers
-		//
-
-	</script>
 
 </body>
+<script type="text/javascript" src="assets/javascript/hang.js"></script>
 </html>
