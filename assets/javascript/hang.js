@@ -1,4 +1,4 @@
-	
+
 	let lettersGuessed = [];
 	let wins = 0;
 	let guessesLeft = 10;
@@ -37,9 +37,11 @@
 			
 			console.log(userGuess); 
 			console.log(letterArr.indexOf(userGuess));
+
 				
 				// console.log(lettersGuessed);
 			if (check === undefined){
+				guessesLeft === guessesLeft--;
 				lettersGuessed.push(userGuess);	
 				$('#lettersGuessed').text("Letters Already Guessed: " + lettersGuessed.join(" ").toUpperCase());
 				$('#remaining').text('Number of Guesses Remaining: ' + guessesLeft);
@@ -47,52 +49,32 @@
 			} 
 			else {
 				$('#textdisplay').show();
-				$('#textdisplay').text("You already guessed that letter try again.")
+				$('#textdisplay').text("You already guessed that letter try again.");
 			}
 
 
-			// if (letterArr.indexOf(e) > -1){
-			// 	for (let i = 0; i < blanksArr.length; i++){
-			// 		if (letterArr[i] === e){
-			// 			blanksArr[i] === e;
-			// 			$('#blanks').html(userGuess);
-			// 		}
-			// 	}
-			// }
-			// 	$('#blanks').text(blanksArr.join(" "));
-			// }
-			if (userGuess === letterArr){
-				for (let i = 0; i < letterArr.length; i++) {
-					console.log("hi");
-				}
+			for(let i = 0; i < letterArr.length; i++){
+				if (userGuess === letterArr[i]){
+					blanksArr.splice(i,1, letterArr[i]);
+						console.log(blanksArr);
+						$('#blanks').html(blanksArr.join(" ").toUpperCase());
+				} 
 			}
-			// 	console.log('found');
-			// } else {
-			// 	guessesLeft === guessesLeft--;
-			// }
-			// console.log(blanksArr);
-		  	
 
-		// function checkWin() {
-		//   if (correctGuesses.indexOf('_') === -1) {
-		//     alert('You Won!');
-		//   } else if (allowedGuesses === 0) {
-		//     alert('You Lost!');
-		//   }
-		// }
-	
+
+			if (blanksArr.join("") === randomWord){
+				alert("you won!");
+				wins++;
+				$('#wins').html('Wins: ' + wins);
+			} else if(guessesLeft === 0){
+				alert("You lost!");
+			}
 		})
 	}
 	events();
 
-	// function check(event){
-	// 		if (letterArr.indexOf(e) > -1){
-	// 			for (let i = 0; i < blanksArr.length; i++){
-	// 				if (letterArr[i] === e){
-	// 					blanksArr[i] === e;
-	// 					$('#blanks').html(blanksArr.join(" "));
-	// 				}
-	// 			}
-	// 		}
-	// }
-	// check();
+
+
+
+	
+	
