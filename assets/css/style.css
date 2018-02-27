@@ -41,3 +41,11 @@ body{
 #textdisplay{
 	color: lightgrey;
 }
+#gO{
+	font-size: 45px;
+}
+#btn{
+	height: 45px;
+    width: 100px;
+    border-radius: 5px;
+}
